@@ -39,7 +39,7 @@ kubectl get all -n prometheus
 ```
 # You should see response similar to below. They should all be Ready and Available
 
-![alt text](https://github.com/anjanpaul/prometheus-and-grafana-Installelation/blob/main/Deployed%20Vesion.png)
+![alt text](https://github.com/anjanpaul/prometheus-and-grafana-Installelation/blob/main/Images/Deployed%20Vesion.png)
 
 
 # In order to access the Prometheus server URL, we are going to use the kubectl port-forward command to access the application.
@@ -104,3 +104,5 @@ kubectl get all -n grafana
 ```
 
 # You should see similar results. They should all be Ready and Available
+
+![alt text](https://github.com/anjanpaul/prometheus-and-grafana-Installelation/blob/main/Images/grafana%20all.png)
