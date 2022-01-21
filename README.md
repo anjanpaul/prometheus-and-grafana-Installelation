@@ -106,3 +106,19 @@ kubectl get all -n grafana
 # You should see similar results. They should all be Ready and Available
 
 ![alt text](https://github.com/anjanpaul/prometheus-and-grafana-Installelation/blob/main/Images/grafana%20all.png)
+
+# You can get Grafana ELB URL using this command. Copy & Paste the value into browser to access Grafana web UI.
+
+```
+export ELB=$(kubectl get svc -n grafana grafana -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+
+echo "http://$ELB"
+
+```
+
+# When logging in, use the username admin and get the password hash by running the following:
+
+```
+kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
+```
