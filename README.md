@@ -76,3 +76,31 @@ EoF
 ```
 
 
+# Create a new Namespace
+
+```
+kubectl create namespace grafana
+
+```
+
+# Install Grafana with helm
+
+```
+helm install grafana grafana/grafana \
+    --namespace grafana \
+    --set persistence.storageClassName="gp2" \
+    --set persistence.enabled=true \
+    --set adminPassword='EKS!sAWSome' \
+    --values ${HOME}/environment/grafana/grafana.yaml \
+    --set service.type=LoadBalancer
+
+```
+
+Run the following command to check if Grafana is deployed properly:
+
+```
+kubectl get all -n grafana
+
+```
+
+# You should see similar results. They should all be Ready and Available
