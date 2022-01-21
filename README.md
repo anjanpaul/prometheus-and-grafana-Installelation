@@ -34,6 +34,9 @@ prometheus-server.prometheus.svc.cluster.local
 
 # Check if Prometheus components deployed as expected
 ```
-Check if Prometheus components deployed as expected
+kubectl get all -n prometheus
 
 ```
+# You should see response similar to below. They should all be Ready and Available
+
+![alt text](https://github.com/anjanpaul/prometheus-and-grafana-Installelation/blob/main/Deployed%20Vesion.png)
