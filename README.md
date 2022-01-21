@@ -1,13 +1,19 @@
 # add prometheus Helm repo
-$ helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
+```
 
 # add grafana Helm repo
-$ helm repo add grafana https://grafana.github.io/helm-charts
+```
+helm repo add grafana https://grafana.github.io/helm-charts
 
+```
 # Create a new Namespace
-$ kubectl create namespace prometheus
+```
+kubectl create namespace prometheus
 
+```
 # Install prometheus with helm
 
 ```
@@ -19,7 +25,7 @@ helm install prometheus prometheus-community/prometheus \
 
 ```
 
-## Make note of the prometheus endpoint in helm response (you will need this later). It should look similar to below:
+## Make note of the prometheus endpoint in helm response (you will need this later). It should look similar to below: Just for checking. do not need to copy this
 ```
 The Prometheus server can be accessed via port 80 on the following DNS name from within your cluster:
 prometheus-server.prometheus.svc.cluster.local
