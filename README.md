@@ -31,3 +31,9 @@ The Prometheus server can be accessed via port 80 on the following DNS name from
 prometheus-server.prometheus.svc.cluster.local
 
 ```
+
+# Check if Prometheus components deployed as expected
+```
+Check if Prometheus components deployed as expected
+
+```
