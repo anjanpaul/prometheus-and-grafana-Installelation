@@ -8,17 +8,17 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 
 ```
 
-# add grafana Helm repo
+## add grafana Helm repo
 ```
 helm repo add grafana https://grafana.github.io/helm-charts
 
 ```
-# Create a new Namespace
+## Create a new Namespace
 ```
 kubectl create namespace prometheus
 
 ```
-# Install prometheus with helm
+## Install prometheus with helm
 
 ```
 
@@ -36,17 +36,17 @@ prometheus-server.prometheus.svc.cluster.local
 
 ```
 
-# Check if Prometheus components deployed as expected
+## Check if Prometheus components deployed as expected
 ```
 kubectl get all -n prometheus
 
 ```
-# You should see response similar to below. They should all be Ready and Available
+## You should see response similar to below. They should all be Ready and Available
 
 ![alt text](https://github.com/anjanpaul/prometheus-and-grafana-Installelation/blob/main/Images/Deployed%20Vesion.png)
 
 
-# In order to access the Prometheus server URL, we are going to use the kubectl port-forward command to access the application.
+## In order to access the Prometheus server URL, we are going to use the kubectl port-forward command to access the application.
 
 ```
 kubectl port-forward -n prometheus deploy/prometheus-server 8080:9090
@@ -80,14 +80,14 @@ EoF
 ```
 
 
-# Create a new Namespace
+## Create a new Namespace
 
 ```
 kubectl create namespace grafana
 
 ```
 
-# Install Grafana with helm
+## Install Grafana with helm
 
 ```
 helm install grafana grafana/grafana \
@@ -107,11 +107,11 @@ kubectl get all -n grafana
 
 ```
 
-# You should see similar results. They should all be Ready and Available
+## You should see similar results. They should all be Ready and Available
 
 ![alt text](https://github.com/anjanpaul/prometheus-and-grafana-Installelation/blob/main/Images/grafana%20all.png)
 
-# You can get Grafana ELB URL using this command. Copy & Paste the value into browser to access Grafana web UI.
+## You can get Grafana ELB URL using this command. Copy & Paste the value into browser to access Grafana web UI.
 
 ```
 export ELB=$(kubectl get svc -n grafana grafana -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
@@ -120,7 +120,7 @@ echo "http://$ELB"
 
 ```
 
-# When logging in, use the username admin and get the password hash by running the following:
+## When logging in, use the username admin and get the password hash by running the following:
 
 ```
 kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
