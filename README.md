@@ -1,4 +1,4 @@
-I deployed prometheus and grafan from following link:
+I deployed prometheus and grafan using following link:
 
 [Visit Website](https://www.eksworkshop.com/intermediate/240_monitoring/deploy-grafana/)
 
