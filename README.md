@@ -20,7 +20,8 @@ helm install prometheus prometheus-community/prometheus \
 ```
 
 ## Make note of the prometheus endpoint in helm response (you will need this later). It should look similar to below:
-| |
-|-|
-| The Prometheus server can be accessed via port 80 on the following DNS name from within your cluster:
-prometheus-server.prometheus.svc.cluster.local|
+```
+The Prometheus server can be accessed via port 80 on the following DNS name from within your cluster:
+prometheus-server.prometheus.svc.cluster.local
+
+```
