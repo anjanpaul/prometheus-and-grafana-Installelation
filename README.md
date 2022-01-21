@@ -48,3 +48,31 @@ kubectl get all -n prometheus
 kubectl port-forward -n prometheus deploy/prometheus-server 8080:9090
 
 ```
+
+# DEPLOY GRAFANA
+
+Create directory file called with following commands:
+```
+mkdir ${HOME}/environment/grafana
+
+```
+
+
+Create YAML file called grafana.yaml with following commands on that directory:
+
+```
+cat << EoF > ${HOME}/environment/grafana/grafana.yaml
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      url: http://prometheus-server.prometheus.svc.cluster.local
+      access: proxy
+      isDefault: true
+EoF
+
+```
+
+
