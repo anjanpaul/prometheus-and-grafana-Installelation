@@ -126,3 +126,7 @@ echo "http://$ELB"
 kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 
 ```
+
+## Grafana Dashboard
+
+![alt text](https://github.com/anjanpaul/prometheus-and-grafana-installation/blob/main/Images/grafana%20dashboard.png)
