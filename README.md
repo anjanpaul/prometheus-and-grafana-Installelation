@@ -1,7 +1,3 @@
-I deployed prometheus and grafan using following link:
-
-[Visit Website](https://www.eksworkshop.com/intermediate/240_monitoring/deploy-grafana/)
-
 # add prometheus Helm repo
 ```
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
